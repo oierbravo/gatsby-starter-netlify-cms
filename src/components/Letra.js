@@ -7,7 +7,7 @@ const Letra = ({ data }) => (
   </div>
 )
 
-Pricing.propTypes = {
+Letra.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       letra: PropTypes.string

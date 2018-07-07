@@ -11,9 +11,31 @@ export default class IndexPage extends React.Component {
       <section className="section">
         <div className="container">
           <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+            <h1 className="has-text-weight-bold is-size-2">Songs</h1>
           </div>
-     
+      {songs
+            .map(({ node: song }) => (
+              <div
+                className="content"
+                style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
+                key={song.id}
+              >
+                <p>
+                  <Link className="has-text-primary" to={song.fields.slug}>
+                    {song.frontmatter.title}
+                  </Link>
+                  <span> &bull; </span>
+                </p>
+                <p>
+                  {song.excerpt}
+                  <br />
+                  <br />
+                  <Link className="button is-small" to={song.fields.slug}>
+                    Keep Reading →
+                  </Link>
+                </p>
+              </div>
+            ))}
         </div>
       </section>
     )

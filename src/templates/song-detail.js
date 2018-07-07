@@ -23,7 +23,7 @@ export const SongDetailTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <pre>{letra}</pre>
+            <Letra data={letra} />
             <pre>{acordes}</pre>
           </div>
         </div>

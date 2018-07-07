@@ -14,8 +14,8 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "song-detail"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Letra", name: "letra", widget: "text"}
-      - {label: "Acordes", name: "acordes", widget: "text"}
+      - {label: "Letra", name: "letra", widget: "markdown"}
+      - {label: "Acordes", name: "acordes", widget: "markdown"}
 
   - name: "pages"
     label: "Pages"

@@ -8,8 +8,8 @@ import Content, { HTMLContent } from '../components/Content'
 export const SongDetailTemplate = ({
   content,
   contentComponent,
-  description,
-  tags,
+  letra,
+  acordes,
   title,
   helmet,
 }) => {
@@ -35,7 +35,8 @@ export const SongDetailTemplate = ({
 SongDetailTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
-  description: PropTypes.string,
+  letra: PropTypes.text,
+  acordes: PropTypes.text,
   title: PropTypes.string,
   helmet: PropTypes.instanceOf(Helmet),
 }
@@ -47,7 +48,8 @@ const SongDetail = ({ data }) => {
     <SongDetailTemplate
       content={song.html}
       contentComponent={HTMLContent}
-      description={song.frontmatter.description}
+      letra={song.frontmatter.letra}
+      acordes={song.frontmatter.acordes}
       helmet={<Helmet title={`${song.frontmatter.title} | Song`} />}
       title={song.frontmatter.title}
     />
@@ -69,6 +71,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        letra
+        acordes
       }
     }
   }

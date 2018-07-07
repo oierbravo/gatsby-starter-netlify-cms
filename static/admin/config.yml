@@ -10,12 +10,12 @@ collections:
     label: "Song"
     folder: "src/pages/songs"
     create: true
-    slug: "{{title}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "song-detail"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Letra", name: "body", widget: "markdown"}
-      - {label: "Acordes", name:"acordes", widget: "markdown"}
+      - {label: "Letra", name: "letra", widget: "text"}
+      - {label: "Acordes", name: "acordes", widget: "text"}
 
   - name: "pages"
     label: "Pages"

@@ -13,8 +13,8 @@ export const SongDetailTemplate = ({
   title,
   helmet,
 }) => {
-  const SongContent = contentComponent || Content
-
+  const SongContentLetra = contentComponent || Content
+  const SongContentAcordes = contentComponent || Content
   return (
     <section className="section">
       {helmet || ''}
@@ -24,8 +24,8 @@ export const SongDetailTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>{letra}</p>
-            <p>{acordes}</p>
+            <SongContentLetra content={letra} />
+            <SongContentAcordes content={acordes} />
           </div>
         </div>
       </div>

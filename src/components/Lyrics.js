@@ -1,18 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Letra = ({ data }) => (
-  <div className="letra">
+const Lyrics = ({ data }) => (
+  <div className="lyrics">
     <pre>{data}</pre>
   </div>
 )
 
-Letra.propTypes = {
+Lyrics.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      letra: PropTypes.string
+      lyrics: PropTypes.string
     })
   ),
 }
 
-export default Letra
+export default Lyrics

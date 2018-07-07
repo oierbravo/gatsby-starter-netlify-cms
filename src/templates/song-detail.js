@@ -4,17 +4,16 @@ import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
-import Letra from '../components/Letra'
+import Lyrics from '../components/Lyrics'
+import Chords from '../components/Chords'
 
 export const SongDetailTemplate = ({
   contentComponent,
-  letra,
-  acordes,
+  lyrics,
+  chords,
   title,
   helmet,
 }) => {
-  const SongContentLetra = contentComponent || Content
-  const SongContentAcordes = contentComponent || Content
   return (
     <section className="section">
       {helmet || ''}
@@ -24,8 +23,8 @@ export const SongDetailTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <Letra data={letra} />
-            <pre>{acordes}</pre>
+            <Lyrics data={lyrics} />
+            <Chords data={chords} />
           </div>
         </div>
       </div>
@@ -35,8 +34,8 @@ export const SongDetailTemplate = ({
 
 SongDetailTemplate.propTypes = {
   contentComponent: PropTypes.func,
-  letra: PropTypes.text,
-  acordes: PropTypes.text,
+  lyrics: PropTypes.text,
+  chords: PropTypes.text,
   title: PropTypes.string,
   helmet: PropTypes.instanceOf(Helmet),
 }
@@ -47,8 +46,8 @@ const SongDetail = ({ data }) => {
   return (
     <SongDetailTemplate
       contentComponent={HTMLContent}
-      letra={song.frontmatter.letra}
-      acordes={song.frontmatter.acordes}
+      lyrics={song.frontmatter.lyrics}
+      chords={song.frontmatter.chords}
       helmet={<Helmet title={`${song.frontmatter.title} | Song`} />}
       title={song.frontmatter.title}
     />
@@ -70,8 +69,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        acordes
-        letra
+        lyrics
+        chords
       }
     }
   }

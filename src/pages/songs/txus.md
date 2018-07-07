@@ -1,7 +1,7 @@
 ---
 templateKey: song-detail
 title: Txus
-letra: "Txus es un alcoholico, Txus está nervioso!!
+lyrics: "Txus es un alcoholico, Txus está nervioso!!
 Tiene alucinaciones, de su ducha sale alcohol hirviendo!
 Esto no puede ser, esto no hay quien lo aguante
 Tiene que llevarse a alguien por delante!

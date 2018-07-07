@@ -6,7 +6,6 @@ import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
 
 export const SongDetailTemplate = ({
-  content,
   contentComponent,
   letra,
   acordes,
@@ -46,7 +45,6 @@ const SongDetail = ({ data }) => {
 
   return (
     <SongDetailTemplate
-      content={song.html}
       contentComponent={HTMLContent}
       letra={song.frontmatter.letra}
       acordes={song.frontmatter.acordes}

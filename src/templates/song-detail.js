@@ -4,6 +4,7 @@ import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
+import Letra from '../components/Letra'
 
 export const SongDetailTemplate = ({
   contentComponent,

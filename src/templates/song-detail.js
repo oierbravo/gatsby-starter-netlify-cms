@@ -24,7 +24,8 @@ export const SongDetailTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <SongDetail content={content} />
+            <p>{letra}</p>
+            <p>{acordes}</p>
           </div>
         </div>
       </div>
@@ -33,7 +34,6 @@ export const SongDetailTemplate = ({
 }
 
 SongDetailTemplate.propTypes = {
-  content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
   letra: PropTypes.text,
   acordes: PropTypes.text,

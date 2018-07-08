@@ -13,8 +13,9 @@ Txus no bebas tanto, no pierdas la cabeza
 Txus no bebas tanto, no pierdas la cabeza
 No pierdas la cabeza
 No pierdas la cabeza!"
-acordes: |-
+chords: |-
   Bb  Eb 
   F   Eb
+fileOriginal: "."
 ---
 

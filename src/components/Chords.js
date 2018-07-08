@@ -8,11 +8,7 @@ const Chords = ({ data }) => (
 )
 
 Chords.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      Chords: PropTypes.string
-    })
-  ),
+  chords: PropTypes.string,
 }
 
 export default Chords

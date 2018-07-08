@@ -8,11 +8,8 @@ const Lyrics = ({ data }) => (
 )
 
 Lyrics.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      lyrics: PropTypes.string
-    })
-  ),
+  data: PropTypes.string,
 }
+
 
 export default Lyrics

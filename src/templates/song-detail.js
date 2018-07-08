@@ -1,55 +1,82 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
+import {Helmet} from 'react-helmet'
 import Link from 'gatsby-link'
-import Content, { HTMLContent } from '../components/Content'
 import Lyrics from '../components/Lyrics'
 import Chords from '../components/Chords'
 
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemTitle,
+  AccordionItemBody,
+} from 'react-accessible-accordion';
+
+// Demo styles, see 'Styles' section below for some notes on use.
+import 'react-accessible-accordion/dist/fancy-example.css';
+
 export const SongDetailTemplate = ({
-  contentComponent,
   lyrics,
   chords,
   title,
-  helmet,
+  fileOriginal
 }) => {
+  console.log(fileOriginal);
   return (
     <section className="section">
-      {helmet || ''}
+      <Helmet>
+        <title>{title} | Song</title>
+      </Helmet>
       <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <Lyrics data={lyrics} />
-            <Chords data={chords} />
-          </div>
-        </div>
+      <Accordion>
+        <AccordionItem>
+            <AccordionItemTitle>
+                <h3>Lyrics</h3>
+            </AccordionItemTitle>
+            <AccordionItemBody>
+                <Lyrics data={lyrics} />
+            </AccordionItemBody>
+        </AccordionItem>
+        <AccordionItem>
+            <AccordionItemTitle>
+                <h3>Chords</h3>
+            </AccordionItemTitle>
+            <AccordionItemBody>
+              <Chords data={chords} />
+            </AccordionItemBody>
+        </AccordionItem>
+        <AccordionItem>
+            <AccordionItemTitle>
+                <h3>Original Audio</h3>
+            </AccordionItemTitle>
+            <AccordionItemBody>
+              {fileOriginal}
+            </AccordionItemBody>
+        </AccordionItem>
+    </Accordion>
+ 
       </div>
     </section>
   )
 }
 
 SongDetailTemplate.propTypes = {
-  contentComponent: PropTypes.func,
-  lyrics: PropTypes.text,
-  chords: PropTypes.text,
-  title: PropTypes.string,
-  helmet: PropTypes.instanceOf(Helmet),
+  lyrics: PropTypes.string,
+  chords: PropTypes.string,
+  fileOriginal: PropTypes.string,
+  title: PropTypes.string
 }
 
 const SongDetail = ({ data }) => {
   const { markdownRemark: song } = data
-
+  
   return (
     <SongDetailTemplate
-      contentComponent={HTMLContent}
       lyrics={song.frontmatter.lyrics}
       chords={song.frontmatter.chords}
-      helmet={<Helmet title={`${song.frontmatter.title} | Song`} />}
       title={song.frontmatter.title}
+      fileOriginal={song.frontmatter.fileOriginal}
     />
   )
 }
@@ -66,11 +93,12 @@ export const pageQuery = graphql`
   query SongDetailByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
-      html
       frontmatter {
+        
         title
         lyrics
         chords
+        fileOriginal
       }
     }
   }

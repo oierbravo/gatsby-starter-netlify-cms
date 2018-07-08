@@ -12,6 +12,6 @@ lyrics: >-
 chords: |-
   Bb  Eb 
   F   Eb
-fileOriginal: /img/txus.-kojon-prieto-y-los-huajolotes.mp3
+fileOriginal: /media/txus.-kojon-prieto-y-los-huajolotes.mp3
 ---
 

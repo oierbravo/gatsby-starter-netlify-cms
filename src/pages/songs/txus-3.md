@@ -5,6 +5,6 @@ lyrics: "Txus es un alcoholico, Txus está nervioso!!\r\nTiene alucinaciones, de
 chords: |-
   Eb f
   F Bb
-fileOriginal: "."
+fileOriginal: /media/txus.-kojon-prieto-y-los-huajolotes.mp3
 ---
 

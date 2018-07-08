@@ -16,6 +16,8 @@ import {
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
 
+import ReactAudioPlayer from 'react-audio-player';
+
 export const SongDetailTemplate = ({
   lyrics,
   chords,
@@ -51,7 +53,11 @@ export const SongDetailTemplate = ({
                 <h3>Original Audio</h3>
             </AccordionItemTitle>
             <AccordionItemBody>
-              {fileOriginal}
+            <ReactAudioPlayer
+              src={fileOriginal}
+              controls
+            />
+              
             </AccordionItemBody>
         </AccordionItem>
     </Accordion>

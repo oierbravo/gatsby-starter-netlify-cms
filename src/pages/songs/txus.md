@@ -7,7 +7,8 @@ chords: |
   Bb  Eb F Bb
 
   ###Bucle
-  Bb 
+  Bb
+trikitixa: "+23,+21-+19,19,#,18-16"
 fileOriginal: /media/txus.-kojon-prieto-y-los-huajolotes.mp3
 ---
 

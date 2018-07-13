@@ -1,8 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { withPrefix } from "gatsby-link";
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+
+import PropTypes from 'prop-types'
 
 import {
   Navbar,
@@ -12,9 +11,8 @@ import {
   NavLink
   } from 'reactstrap';
 
-let isHomepage = location.pathname === withPrefix("/");
-console.log(isHomepage);
-const Header = () => (
+
+const Header = ({isHomepage,title}) => (
   
   <header>
     <Navbar color="dark" dark expand="sd">
@@ -31,12 +29,20 @@ const Header = () => (
                 
               })()}
               </NavItem>
+             
               
                 </Nav>
+                <h1 className="ml-auto primary">
+                {title}
+              </h1>
           <NavbarBrand className="ml-auto" href="/">MongoBook</NavbarBrand>
           </Navbar>
   </header>
 )
+Header.propTypes = {
+  isHomepage: PropTypes.bool,
+  title: PropTypes.string,
+}
 
 /*const Header = () => (
   <nav className="navbar is-transparent">

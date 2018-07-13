@@ -36,6 +36,11 @@ export const SongDetailTemplate = ({
       </Helmet>
       <Row>
         <Col sm="12">
+          <h1 className="text-center u-pv+">{title}</h1>
+        </Col>
+      </Row>
+      <Row  className="u-pb+">
+        <Col sm="12">
         <Accordion>
           <AccordionItem>
               <AccordionItemTitle>

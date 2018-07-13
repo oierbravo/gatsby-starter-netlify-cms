@@ -21,6 +21,28 @@ import { Container, Row, Col } from 'reactstrap';
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
 
+import LocalizedStrings from 'react-localization';
+
+let strings = new LocalizedStrings({
+ en:{
+   title:"Title",
+   lyrics:"Lyrics",
+   chords:"Chords",
+   audios:"Audios"
+ },
+ es:{
+  title:"Titulo",
+  lyrics:"Letra",
+  chords:"Acordes",
+  audios:"Audios"
+},
+  eu:{
+    title:"Izenburua",
+    lyrics:"Letra",
+    chords:"Akordeak",
+    audios:"Audioak"
+  }
+});
 
 export const SongDetailTemplate = ({
   lyrics,
@@ -44,7 +66,7 @@ export const SongDetailTemplate = ({
         <Accordion>
           <AccordionItem>
               <AccordionItemTitle>
-                  <h3>Lyrics</h3>
+                  <h3>{strings.lyrics}</h3>
               </AccordionItemTitle>
               <AccordionItemBody>
                   <Lyrics data={lyrics} />
@@ -52,7 +74,7 @@ export const SongDetailTemplate = ({
           </AccordionItem>
           <AccordionItem>
               <AccordionItemTitle>
-                  <h3>Chords</h3>
+                  <h3>{strings.chords}</h3>
               </AccordionItemTitle>
               <AccordionItemBody>
                 <Chords data={chords} />
@@ -68,7 +90,7 @@ export const SongDetailTemplate = ({
           </AccordionItem>
           <AccordionItem>
               <AccordionItemTitle>
-                  <h3>Original Audio</h3>
+                  <h3>{strings.audios}</h3>
               </AccordionItemTitle>
               <AccordionItemBody>
               <AudioFiles files={audio} />

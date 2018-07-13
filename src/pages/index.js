@@ -3,6 +3,19 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
+import LocalizedStrings from 'react-localization';
+
+let strings = new LocalizedStrings({
+ en:{
+   songs:"Songs"
+ },
+ es:{
+  songs:"Canciones"
+},
+  eu:{
+    songs:"Abestiak"
+  }
+});
 
 export default class IndexPage extends React.Component {
   render() {
@@ -14,7 +27,7 @@ export default class IndexPage extends React.Component {
         <Container>
           <Row>
             <Col sm="12">
-              <h1 className="text-center u-pv+">Songs</h1>
+              <h1 className="text-center u-pv+">{strings.songs}</h1>
             </Col>  
           </Row>
           <Row>

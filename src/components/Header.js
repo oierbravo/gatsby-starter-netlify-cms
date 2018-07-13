@@ -10,8 +10,18 @@ import {
   NavItem,
   NavLink
   } from 'reactstrap';
-
-
+  import LocalizedStrings from 'react-localization';
+  let strings = new LocalizedStrings({
+    en:{
+      back:"Back"
+    },
+    es:{
+      back:"Volver"
+   },
+     eu:{
+      back:"Itzuli"
+     }
+   });
 const Header = ({isHomepage,title}) => (
   
   <header>
@@ -22,7 +32,7 @@ const Header = ({isHomepage,title}) => (
                 if(!isHomepage) {
                     return(
                       <Link to="/">
-                        Back
+                        {strings.back}
                       </Link>
                     )
                 }

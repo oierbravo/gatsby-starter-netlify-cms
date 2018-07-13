@@ -6,12 +6,13 @@ import Header from '../components/Header'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './all.sass'
+import "gatsby-link";
 import { withPrefix } from "gatsby-link";
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children,location }) => (
   <div>
     <Helmet title="Home | MongoBook" />
-    <Header isHomepage={window.location.pathname === withPrefix("/")}/>
+    <Header isHomepage={location.pathname === withPrefix("/")}/>
     <section>{children()}</section>
   </div>
 )

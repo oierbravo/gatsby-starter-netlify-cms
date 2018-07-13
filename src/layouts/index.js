@@ -11,7 +11,7 @@ import { withPrefix } from "gatsby-link";
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title="Home | MongoBook" />
-    <Header isHomepage={location.pathname === withPrefix("/")}/>
+    <Header isHomepage={window.location.pathname === withPrefix("/")}/>
     <section>{children()}</section>
   </div>
 )

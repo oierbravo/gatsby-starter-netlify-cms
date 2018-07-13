@@ -5,6 +5,7 @@ import {Helmet} from 'react-helmet'
 import Link from 'gatsby-link'
 import Lyrics from '../components/Lyrics'
 import Chords from '../components/Chords'
+import AudioFiles from '../components/AudioFiles'
 
 import TrikiSheet from 'react-lib-trikisheet'
 import styles from 'react-lib-trikisheet/build/css/index.css'
@@ -25,9 +26,8 @@ export const SongDetailTemplate = ({
   chords,
   trikitixa,
   title,
-  fileOriginal
+  audio
 }) => {
-  console.log(fileOriginal);
   return (
     <section className="section">
       <Helmet>
@@ -64,10 +64,7 @@ export const SongDetailTemplate = ({
                 <h3>Original Audio</h3>
             </AccordionItemTitle>
             <AccordionItemBody>
-            <ReactAudioPlayer
-              src={fileOriginal}
-              controls
-            />
+            <AudioFiles files={audio} />
               
             </AccordionItemBody>
         </AccordionItem>
@@ -83,19 +80,20 @@ SongDetailTemplate.propTypes = {
   chords: PropTypes.string,
   trikitixa: PropTypes.string,
   fileOriginal: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  audio: PropTypes.array
 }
 
 const SongDetail = ({ data }) => {
   const { markdownRemark: song } = data
-  
+  console.log(song);
   return (
     <SongDetailTemplate
       trikitixa={song.frontmatter.trikitixa}
       lyrics={song.frontmatter.lyrics}
       chords={song.frontmatter.chords}
       title={song.frontmatter.title}
-      fileOriginal={song.frontmatter.fileOriginal}
+      audio={song.frontmatter.audio}
     />
   )
 }
@@ -118,7 +116,10 @@ export const pageQuery = graphql`
         lyrics
         chords
         trikitixa
-        fileOriginal
+        audio {
+          title
+          file
+        }
       }
     }
   }

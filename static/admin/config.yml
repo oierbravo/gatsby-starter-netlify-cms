@@ -15,7 +15,7 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "song-detail"}
       - {label: Title, name: "title", widget: "string"}
       - {label: Lyrics, name: "lyrics", widget: "markdown"}
-      - {label: Chords, name: "chords", widget: "markdown"}
+      - {label: Chords, name: chords, widget: list, fields: [{label: Title, name: title, widget: string}, {label: Sequence, name: sequence, widget: markdown}]}
       - {label: Trikitixa, name: "trikitixa", widget: "markdown"}
       - {label: Audio, name: audio, widget: list, fields: [{label: Title, name: title, widget: string}, {label: File, name: file, widget: file,default: /audio/original-song.mp3}]}
 

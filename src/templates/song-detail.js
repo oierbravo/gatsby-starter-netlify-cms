@@ -16,10 +16,11 @@ import {
   AccordionItemBody,
 } from 'react-accessible-accordion';
 
+import { Container, Row, Col } from 'reactstrap';
+
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
 
-import ReactAudioPlayer from 'react-audio-player';
 
 export const SongDetailTemplate = ({
   lyrics,
@@ -29,55 +30,57 @@ export const SongDetailTemplate = ({
   audio
 }) => {
   return (
-    <section className="section">
+    <Container className="section">
       <Helmet>
-        <title>{title} | Song</title>
+        <title>{title}</title>
       </Helmet>
-      <div className="container content">
-      <Accordion>
-        <AccordionItem>
-            <AccordionItemTitle>
-                <h3>Lyrics</h3>
-            </AccordionItemTitle>
-            <AccordionItemBody>
-                <Lyrics data={lyrics} />
-            </AccordionItemBody>
-        </AccordionItem>
-        <AccordionItem>
-            <AccordionItemTitle>
-                <h3>Chords</h3>
-            </AccordionItemTitle>
-            <AccordionItemBody>
-              <Chords data={chords} />
-            </AccordionItemBody>
-        </AccordionItem>
-        <AccordionItem>
-            <AccordionItemTitle>
-                <h3>Trikitixa</h3>
-            </AccordionItemTitle>
-            <AccordionItemBody>
-              <TrikiSheet sheet={trikitixa}/>
-            </AccordionItemBody>
-        </AccordionItem>
-        <AccordionItem>
-            <AccordionItemTitle>
-                <h3>Original Audio</h3>
-            </AccordionItemTitle>
-            <AccordionItemBody>
-            <AudioFiles files={audio} />
-              
-            </AccordionItemBody>
-        </AccordionItem>
-    </Accordion>
- 
-      </div>
-    </section>
+      <Row>
+        <Col sm="12">
+        <Accordion>
+          <AccordionItem>
+              <AccordionItemTitle>
+                  <h3>Lyrics</h3>
+              </AccordionItemTitle>
+              <AccordionItemBody>
+                  <Lyrics data={lyrics} />
+              </AccordionItemBody>
+          </AccordionItem>
+          <AccordionItem>
+              <AccordionItemTitle>
+                  <h3>Chords</h3>
+              </AccordionItemTitle>
+              <AccordionItemBody>
+                <Chords data={chords} />
+              </AccordionItemBody>
+          </AccordionItem>
+          <AccordionItem>
+              <AccordionItemTitle>
+                  <h3>Trikitixa</h3>
+              </AccordionItemTitle>
+              <AccordionItemBody>
+                <TrikiSheet sheet={trikitixa}/>
+              </AccordionItemBody>
+          </AccordionItem>
+          <AccordionItem>
+              <AccordionItemTitle>
+                  <h3>Original Audio</h3>
+              </AccordionItemTitle>
+              <AccordionItemBody>
+              <AudioFiles files={audio} />
+                
+              </AccordionItemBody>
+          </AccordionItem>
+      </Accordion>
+  
+        </Col>
+      </Row>
+    </Container>
   )
 }
 
 SongDetailTemplate.propTypes = {
   lyrics: PropTypes.string,
-  chords: PropTypes.string,
+  chords: PropTypes.array,
   trikitixa: PropTypes.string,
   fileOriginal: PropTypes.string,
   title: PropTypes.string,
@@ -111,10 +114,12 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       frontmatter {
-        
         title
         lyrics
-        chords
+        chords {
+          title
+          sequence
+        }
         trikitixa
         audio {
           title

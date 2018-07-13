@@ -1,10 +1,44 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
+import { withPrefix } from "gatsby-link";
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
 
-const Navbar = () => (
+import {
+  Navbar,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink
+  } from 'reactstrap';
+
+let isHomepage = location.pathname === withPrefix("/");
+console.log(isHomepage);
+const Header = () => (
+  
+  <header>
+    <Navbar color="dark" dark expand="sd">
+            <Nav navbar>
+              <NavItem>
+              {(() => {
+                if(!isHomepage) {
+                    return(
+                      <Link to="/">
+                        Back
+                      </Link>
+                    )
+                }
+                
+              })()}
+              </NavItem>
+              
+                </Nav>
+          <NavbarBrand className="ml-auto" href="/">MongoBook</NavbarBrand>
+          </Navbar>
+  </header>
+)
+
+/*const Header = () => (
   <nav className="navbar is-transparent">
     <div className="container">
       <div className="navbar-brand">
@@ -36,6 +70,6 @@ const Navbar = () => (
       </div>
     </div>
   </nav>
-)
+)*/
 
-export default Navbar
+export default Header

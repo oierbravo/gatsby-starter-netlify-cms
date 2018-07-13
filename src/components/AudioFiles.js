@@ -1,13 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
+import ReactAudioPlayer from 'react-audio-player';
+
 
 const AudioFiles = ({ files }) => (
-  <div>
-    {files.map(file => (
-      <ReactAudioPlayer src={file} controls/>
+  <ul>
+    {files.map((file,index) => (
+      <li key={index}>
+        <p className="c-audio-files--title">{file.title}</p>
+        <ReactAudioPlayer src={file.file} controls/>
+
+      </li>
     ))}
-  </div>
+  </ul>
 )
 
 AudioFiles.propTypes = {

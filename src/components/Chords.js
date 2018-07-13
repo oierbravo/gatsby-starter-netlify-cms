@@ -3,12 +3,17 @@ import PropTypes from 'prop-types'
 
 const Chords = ({ data }) => (
   <div className="chords">
-    <pre>{data}</pre>
+    {data.map((chord,index) => (
+      <div key={index} className="chord">
+        <p><strong>{chord.title}</strong></p>
+        <pre>{chord.sequence}</pre>
+      </div>
+    ))}
   </div>
 )
 
 Chords.propTypes = {
-  chords: PropTypes.string,
+  chords: PropTypes.array,
 }
 
 export default Chords

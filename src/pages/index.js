@@ -2,42 +2,37 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
+
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { edges: songs } = data.allMarkdownRemark
 
     return (
-      <section className="section">
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Songs</h1>
-          </div>
+      <main role="main">
+        <Container>
+          <Row>
+            <Col sm="12">
+              <h1 className="text-center u-pv+">Songs</h1>
+            </Col>  
+          </Row>
+          <Row>
+            <Col sm="12">
+            <ListGroup>
       {songs
             .map(({ node: song }) => (
-              <div
-                className="content"
-                style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                key={song.id}
-              >
-                <p>
-                  <Link className="has-text-primary" to={song.fields.slug}>
-                    {song.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                </p>
-                <p>
-                  {song.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-small" to={song.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </div>
+              <ListGroupItem action key={song.id}>
+                <Link to={song.fields.slug}>
+                  <h3>{song.frontmatter.title}</h3>
+                </Link>
+              </ListGroupItem>
             ))}
-        </div>
-      </section>
+            </ListGroup>
+            </Col>
+            </Row>
+        </Container>
+      </main>
     )
   }
 }

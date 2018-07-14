@@ -7,7 +7,7 @@ chords:
     title: Estribillo
   - sequence: Bb  F Eb  F
     title: Bucle principal
-trikitixa: '+23,+21-+19,19,#,18-16'
+trikitixa: '+7,+7,+8,+5,+8,+7,+9,+9,+7,+9,11,+9,+7,+9,11,+9,+7'
 audio:
   - file: /media/txus.-kojon-prieto-y-los-huajolotes.mp3
     title: Audio Original

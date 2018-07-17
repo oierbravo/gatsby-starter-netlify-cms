@@ -22,6 +22,11 @@ chords:
 trikitixa: '1'
 audio:
   - file: /img/mierda-de-aldea.mp3
-    title: Round 1 - Primera prueba
+    title: Round 1 - Primera prueba Todos
+  - file: /img/audios/Mierda de Aldea - Round 1 - Sin Voz.ogg
+    title: Round 1 - Sin Voz
+  - file: /img/audios/Mierda de Aldea - Round 1 - Sin Guitarra.ogg
+    title: Round 1 - Sin Guitarra
+  - file: /img/audios Mierda de Aldea - Round 1 - Sin Triki.ogg
+    title: Round 1 - Sin Triki
 ---
-

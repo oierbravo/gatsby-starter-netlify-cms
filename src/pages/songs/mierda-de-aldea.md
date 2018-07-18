@@ -19,14 +19,24 @@ lyrics: |-
 chords:
   - sequence: Bb Eb F Bb
     title: Base
-trikitixa: '1'
+trikitixa: 
+  - title: Riff - parte 1
+    numbers: '17,15,13,15,16,14,12,14,+16,+11,+9,+11,12,14,13,15'
+  - title: Riff - parte 2
+    numbers: '17,15,13,15,16,14,12,14,+16,+11,+9,+11,12,12,12'
+  - title: Acorde Bb (I)
+    numbers: '17-15-13-11-9-7-5'
+  - title: Acorde Eb (IV)
+    numbers: '16-14-12-10-8-6-4'
+  - title: Acorde Bb (V)
+    numbers: '+16-+11-+9-+8-+3-+1'
 audio:
-  - file: /img/mierda-de-aldea.mp3
+  - file: /media/audios/Mierda de Aldea - Round 1.mp3
     title: Round 1 - Primera prueba Todos
-  - file: /img/audios/Mierda de Aldea - Round 1 - Sin Voz.ogg
+  - file: /media/audios/mierda-de-aldea-sin-voz.mp3
     title: Round 1 - Sin Voz
-  - file: /img/audios/Mierda de Aldea - Round 1 - Sin Guitarra.ogg
+  - file: /media/audios/mierda-de-aldea-sin-guitarra.mp3
     title: Round 1 - Sin Guitarra
-  - file: /img/audios Mierda de Aldea - Round 1 - Sin Triki.ogg
+  - file: /media/audios/mierda-de-aldea-sin-triki.mp3
     title: Round 1 - Sin Triki
 ---

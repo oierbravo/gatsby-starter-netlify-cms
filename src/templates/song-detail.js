@@ -6,9 +6,9 @@ import Link from 'gatsby-link'
 import Lyrics from '../components/Lyrics'
 import Chords from '../components/Chords'
 import AudioFiles from '../components/AudioFiles'
+import TrikitixaParts from '../components/TrikitixaParts'
 
-import TrikiSheet from 'react-lib-trikisheet'
-import styles from 'react-lib-trikisheet/build/css/index.css'
+
 import {
   Accordion,
   AccordionItem,
@@ -85,7 +85,7 @@ export const SongDetailTemplate = ({
                   <h3>Trikitixa</h3>
               </AccordionItemTitle>
               <AccordionItemBody>
-                <TrikiSheet sheet={trikitixa}/>
+                <TrikitixaParts parts={trikitixa}/>
               </AccordionItemBody>
           </AccordionItem>
           <AccordionItem>
@@ -108,7 +108,7 @@ export const SongDetailTemplate = ({
 SongDetailTemplate.propTypes = {
   lyrics: PropTypes.string,
   chords: PropTypes.array,
-  trikitixa: PropTypes.string,
+  trikitixa: PropTypes.array,
   fileOriginal: PropTypes.string,
   title: PropTypes.string,
   audio: PropTypes.array
@@ -147,7 +147,10 @@ export const pageQuery = graphql`
           title
           sequence
         }
-        trikitixa
+        trikitixa {
+          title
+          numbers
+        }
         audio {
           title
           file

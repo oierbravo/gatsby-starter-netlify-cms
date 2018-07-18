@@ -5,9 +5,11 @@ lyrics: "El verano se fue \r\npero tú llegaste a mí, \r\nfurioso el viento del
 chords:
   - sequence: Bb G
     title: Base
-trikitixa: '11,9,11-9-7'
+trikitixa: 
+  - title: Riff
+    numbers: '11,9,11-9-7'
 audio:
-  - file: /img/kojon-prieto-y-los-huajolotes-eres-un-hada.mp3
+  - file: /media/kojon-prieto-y-los-huajolotes-eres-un-hada.mp3
     title: Version Original Huajalotes
 ---
 

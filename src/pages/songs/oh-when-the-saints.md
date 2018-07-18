@@ -10,9 +10,9 @@ chords:
 
       F F
     title: Base
-trikitixa: 
-  - title: Riff
-    numbers: '7, 9, 7, 9, 7, 7, 7, +5'
+trikitixa:
+  - numbers: '7,9,7,9,7,7,7,+5'
+    title: Riff
 audio:
   - title: V11
 ---

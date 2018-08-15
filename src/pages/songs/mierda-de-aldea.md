@@ -15,7 +15,7 @@ lyrics: |-
   Todo este sabado m lo voy a pasar, tomando gotas, hasta alucinar,
   ya estoy harto, no kiero pensar mas, siempre muy serios, mierda d aldeaa!! 
   Todo este sabado m lo voy a pasar metido en el parking, venga a txatarrear!
-  Ya estoy harto, no cabe ni uno mas, llen@ d coches, mierda d aldeaa!!
+  Ya estoy harto, no cabe ni uno mas, llen@ d coches, mierda d aldeaa!!!
 chords:
   - sequence: Bb Eb F Bb
     title: Base
